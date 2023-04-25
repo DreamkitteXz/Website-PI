@@ -12,7 +12,7 @@ function enviarDados() {
         var xhr = new XMLHttpRequest();
       
         // Configurar a requisição HTTP POST
-        var url = "";
+        var url = "";// colocar ip do estátio do esp32
         xhr.open("get", url, true);
       
         // Adicionar um listener para tratar a resposta da requisição
