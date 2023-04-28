@@ -1,46 +1,43 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <script defer src="./scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./selecao.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <form id="form" action="/">
-            <h1>Escolha a fonte de audio</h1>
-            <div class="input-control">
-                    <select id="Fontes de áudio">
-                        <option value="canal1">Canal 1</option>
-                        <option value="canal2">Canal 2</option>
-                        <option value="canal3">Canal 3</option>
-                        <option value="canal4">Canal 4</option>
-                      </select>
-                      
-                      <button onclick="enviarRequisicao()">Enviar</button>
-                      
-                      <script>
-                      function enviarRequisicao() {
-                        const selectedOption = document.querySelector('#canal-select option:checked');
-                        const selectedValue = selectedOption.value;
-                        const channelParams = "canal=" + selectedValue;
-                        const url = "192.168.4.213" + channelParams;
-                      
-                        fetch(url)
-                        .catch(error => {
-                          console.error(error);
-                        alert("Ocorreu um erro ao enviar a requisição.");
-                         });
-                      }
-                      </script>
-                <div class="error"></div>
-            </div>
-                    </form>
-    </div>
+  <div class="container">
+    <form id="form" action="/">
+      <h1>Escolha a fonte de audio</h1>
+      <div class="input-control">
+        <select id="Fontes de áudio">
+          <option value="canal1">Canal 1</option>
+          <option value="canal2">Canal 2</option>
+          <option value="canal3">Canal 3</option>
+          <option value="canal4">Canal 4</option>
+        </select>
+        <label for="freq">
+          <h2>Frequências de operação:</h2>
+        </label>
+        <select id="freq">
+          <option value="106.7">106.7 MHz</option>
+          <option value="106.9">106.9 MHz</option>
+          <option value="107.1">107.1 MHz</option>
+        </select>
+
+        <button onclick="enviarRequisicao()">Enviar</button>
+
+        <div class="error"></div>
+      </div>
+    </form>
+  </div>
 </body>
+
 </html>
