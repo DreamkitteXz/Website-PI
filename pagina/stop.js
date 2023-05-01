@@ -1,6 +1,6 @@
 function stopTransmition() {
         // Obter os valores dos campos de entrada
-        var stop = "Stop";
+        var stop = "stop";
       
         // Criar um objeto FormData contendo os dados do formulário
         var formData = new FormData();

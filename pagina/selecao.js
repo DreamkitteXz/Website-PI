@@ -1,8 +1,8 @@
 
 function enviarRequisicao() {
         // Obter os valores dos campos de entrada
-        var tempo = document.getElementById("Tempo de Transmissão").value;
-        var frequencia = document.getElementById("freq").value;
+        var tempo = document.getElementById("Tempo").value;
+        var frequencia = document.getElementById(freq).value;
 
         // Criar um objeto FormData contendo os dados do formulário
         var formData = new FormData();
