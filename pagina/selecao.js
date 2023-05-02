@@ -1,28 +1,15 @@
-
 function enviarRequisicao() {
-        // Obter os valores dos campos de entrada
-        var tempo = document.getElementById("Tempo").value;
-        var frequencia = document.getElementById(freq).value;
-
-        // Criar um objeto FormData contendo os dados do formulário
-        var formData = new FormData();
-        formData.append('tempo', tempo);
-        formData.append('frequencia', frequencia);
-
-        // Criar um objeto XMLHttpRequest
-        var xhr = new XMLHttpRequest();
-
-        // Configurar a requisição HTTP POST
-        var url = "192.168.4.213";// colocar ip do estátio do esp32
-        xhr.open("get", url, true);
-
-        // Adicionar um listener para tratar a resposta da requisição
-        xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
+        const tempo = document.getElementById("Tempo").value;
+        const freq = document.getElementById("freq").value;
+        console.log(tempo);
+        console.log(freq);
+        const url = `192.168.4.213?${tempo}&${freq}`;
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onload = function () {
+                if (xhr.status === 200) {
                         console.log(xhr.responseText);
                 }
         };
-
-        // Enviar a requisição com os dados do formulário
-        xhr.send(formData);
+        xhr.send();
 }
